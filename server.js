@@ -25,12 +25,9 @@ app.get('/customers', async (req, res) => {
     const result = await pool.query('SELECT * FROM Customers');
     res.json(result.rows);
   } catch (err) {
-    console.error(err.message);
+    console.error('Error:', err.message);
     res.status(500).send('Server Error');
   }
 });
 
-app.listen(port, () => {
-  console.log(`✅ Server running on http://localhost:${port}`);
-});
 
