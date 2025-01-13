@@ -19,7 +19,12 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
-// Sample API endpoints
+// Test if the server is running
+app.get('/', (req, res) => {
+  res.send('API is running!');
+});
+
+// Sample API endpoint to get all customers
 app.get('/customers', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM Customers');
@@ -30,4 +35,7 @@ app.get('/customers', async (req, res) => {
   }
 });
 
-
+// Start the server
+app.listen(port, () => {
+  console.log(`✅ Server running on http://localhost:${port}`);
+});
