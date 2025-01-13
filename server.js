@@ -6,6 +6,11 @@ const { Pool } = require('pg');
 const app = express();
 const port = process.env.PORT || 5000;
 
+app.listen(port, () => {
+  console.log(`✅ Server running on http://localhost:${port}`);
+});
+
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -38,4 +43,7 @@ app.get('/customers', async (req, res) => {
 // Start the server
 app.listen(port, () => {
   console.log(`✅ Server running on http://localhost:${port}`);
+});
+app.get('/', (req, res) => {
+  res.send('API is running!');
 });
