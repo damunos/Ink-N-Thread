@@ -18,10 +18,9 @@ const pool = new Pool({
   password: process.env.DB_PASS,
   port: process.env.DB_PORT,
   ssl: {
-    rejectUnauthorized: false, // Add this for secure connections on Railway
+    rejectUnauthorized: false, // Required for Railway
   },
 });
-
 
 // Healthcheck route
 app.get('/health', (req, res) => {
