@@ -19,14 +19,19 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
+// Healthcheck route
+app.get('/health', (req, res) => {
+  res.status(200).send('Server is healthy!');
+});
+
 // API endpoint
 app.get('/customers', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM Customers');
     res.json(result.rows);
   } catch (err) {
-    console.error('Error:', err.message);
-    res.status(500).send('Server Error');
+    console.error('❌ Error fetching customers:', err.message);
+    res.status(500).json({ error: 'Server Error', message: err.message });
   }
 });
 
