@@ -4,6 +4,7 @@ const cors = require('cors');
 const { Pool } = require('pg');
 
 const app = express();
+const port = process.env.PORT || 8080;
 
 // Middleware
 app.use(cors());
@@ -18,12 +19,7 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
-// Root endpoint
-app.get('/', (req, res) => {
-  res.send('API is running!');
-});
-
-// Customers endpoint
+// API endpoint
 app.get('/customers', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM Customers');
@@ -34,9 +30,7 @@ app.get('/customers', async (req, res) => {
   }
 });
 
-// Use Railway’s dynamically assigned port
-const port = process.env.PORT || 5000;
+// Start server
 app.listen(port, () => {
   console.log(`✅ Server running on port ${port}`);
 });
-
