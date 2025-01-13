@@ -1,19 +1,10 @@
 {
-    "$schema": "https://railway.com/railway.schema.json",
+  {
     "build": {
-      "builder": "NIXPACKS"
+      "builder": "nixpacks"
     },
     "deploy": {
-      "region": "us-west2",
-      "runtime": "V2",
-      "numReplicas": 1,
-      "sleepApplication": false,
-      "multiRegionConfig": {
-        "us-west2": {
-          "numReplicas": 1
-        }
-      },
-      "restartPolicyType": "ON_FAILURE",
-      "restartPolicyMaxRetries": 10
+      "startCommand": "node server.js"
     }
   }
+  
