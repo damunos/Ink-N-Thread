@@ -14,10 +14,9 @@ app.use(express.json());
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false,
+    rejectUnauthorized: false, // Required for secure Railway connections
   },
 });
-
 
 // Healthcheck route
 app.get('/health', (req, res) => {
