@@ -2,6 +2,7 @@
   "name": "ink-n-thread",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://damunos.github.io/Ink-N-Thread",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -29,5 +30,5 @@
     ]
   }
 }
-"homepage": "https://damunos.github.io/Ink-N-Thread"
+
 
