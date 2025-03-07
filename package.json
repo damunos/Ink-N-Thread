@@ -1,25 +1,19 @@
 {
   "name": "ink-n-thread",
   "version": "1.0.0",
-  "main": "server.js",
+  "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.18.2",
-    "pg": "^8.11.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/damunos/Ink-N-Thread.git"
-  },
-  "bugs": {
-    "url": "https://github.com/damunos/Ink-N-Thread/issues"
-  },
-  "homepage": "https://github.com/damunos/Ink-N-Thread#readme",
-  "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "latest",
+    "gh-pages": "^5.0.0"
   }
 }
