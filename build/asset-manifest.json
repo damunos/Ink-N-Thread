@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Ink-N-Thread/static/css/main.319ff74b.css",
+    "main.js": "/Ink-N-Thread/static/js/main.7d1501e7.js",
+    "index.html": "/Ink-N-Thread/index.html",
+    "main.319ff74b.css.map": "/Ink-N-Thread/static/css/main.319ff74b.css.map",
+    "main.7d1501e7.js.map": "/Ink-N-Thread/static/js/main.7d1501e7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.319ff74b.css",
+    "static/js/main.7d1501e7.js"
+  ]
+}
