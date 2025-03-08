@@ -10,13 +10,13 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <div className="flex flex-col min-h-screen">
         {/* Navbar */}
         <Navbar />
 
         {/* Page Content */}
-        <div className="flex-grow">
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
@@ -24,7 +24,7 @@ function App() {
             <Route path="/track-order" element={<TrackOrder />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </div>
+        </main>
 
         {/* Footer */}
         <Footer />
