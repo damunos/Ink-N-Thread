@@ -21,7 +21,7 @@
     "react-konva": "^18.2.10",
     "react-router-dom": "^7.3.0",
     "react-scripts": "^5.0.1",
-    "serve": "^14.2.0"
+    "serve": "^14.2.4"
   },
   "browserslist": {
     "production": [
