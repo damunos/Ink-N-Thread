@@ -12,11 +12,13 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "framer-motion": "^12.4.10",
     "gh-pages": "^5.0.0",
+    "html2canvas": "^1.4.1",
     "konva": "^9.3.18",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-konva": "^19.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-konva": "^18.2.10",
     "react-router-dom": "^7.3.0",
     "react-scripts": "^5.0.1"
   },
