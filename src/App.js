@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
-import Button from "./src/components/ui/Button"; // ✅ Correct path inside src/
+import Button from "./components/ui/Button"; // ✅ Correct path inside src/
 import { Stage, Layer, Text, Line, Transformer } from "react-konva";
 import useImage from "use-image";
 import html2canvas from "html2canvas";
