@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Ink-N-Thread/static/css/main.319ff74b.css",
-    "main.js": "/Ink-N-Thread/static/js/main.333f99f5.js",
+    "main.js": "/Ink-N-Thread/static/js/main.0953fe77.js",
     "index.html": "/Ink-N-Thread/index.html",
     "main.319ff74b.css.map": "/Ink-N-Thread/static/css/main.319ff74b.css.map",
-    "main.333f99f5.js.map": "/Ink-N-Thread/static/js/main.333f99f5.js.map"
+    "main.0953fe77.js.map": "/Ink-N-Thread/static/js/main.0953fe77.js.map"
   },
   "entrypoints": [
     "static/css/main.319ff74b.css",
-    "static/js/main.333f99f5.js"
+    "static/js/main.0953fe77.js"
   ]
 }
