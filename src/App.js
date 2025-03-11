@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
-import Button from "./components/ui/Button"; // ✅ Correct path inside src/
+import Button from "./components/ui/Button"; // Ensure Button.js exists inside /components/ui/
 import { Stage, Layer, Text, Line, Transformer } from "react-konva";
-import useImage from "use-image";
 import html2canvas from "html2canvas";
 
 function Home() {
@@ -16,17 +15,19 @@ function Home() {
   const [templates, setTemplates] = useState([]);
   const gridSize = 20;
 
-  // Handle Selection of Items
+  // Handle item selection
   const handleSelection = (id) => {
     setSelectedIds((prev) =>
       prev.includes(id) ? prev.filter((selectedId) => selectedId !== id) : [...prev, id]
     );
   };
 
+  // Save history of added items
   const saveToHistory = (newItems) => {
     setItems(newItems);
   };
 
+  // Add a new text item
   const addText = () => {
     saveToHistory([
       ...items,
@@ -34,6 +35,7 @@ function Home() {
     ]);
   };
 
+  // Save a design as a template
   const saveTemplate = async () => {
     const canvas = document.querySelector("canvas");
     const snapshot = await html2canvas(canvas);
@@ -41,6 +43,7 @@ function Home() {
     setTemplates([...templates, { id: templates.length, design: [...items], preview: imageData }]);
   };
 
+  // Load a template design
   const loadTemplate = (templateId) => {
     const template = templates.find((t) => t.id === templateId);
     if (template) {
@@ -48,6 +51,7 @@ function Home() {
     }
   };
 
+  // Export design as an image
   const exportDesign = () => {
     const canvas = document.querySelector("canvas");
     html2canvas(canvas).then((snapshot) => {
@@ -79,7 +83,7 @@ function Home() {
         </motion.div>
       </header>
 
-      {/* Design Tool */}
+      {/* Design Tool Section */}
       <section className="p-6">
         <h3 className="text-2xl font-semibold text-black">Design Your Apparel</h3>
         <div className="bg-white p-4 shadow-md rounded-lg mt-4">
@@ -116,6 +120,7 @@ function Home() {
           </Stage>
 
           <div className="mt-4">
+            <Button onClick={addText} className="ml-2 bg-gray-700 text-white px-4 py-2">Add Text</Button>
             <Button onClick={saveTemplate} className="ml-2 bg-gray-700 text-white px-4 py-2">Save Template</Button>
             {templates.map((template) => (
               <div key={template.id} className="inline-block m-2">
@@ -138,7 +143,7 @@ function Home() {
 
 export default function App() {
   return (
-    <Router basename="/Ink-N-Thread">
+    <Router basename={process.env.NODE_ENV === "development" ? "/" : "/Ink-N-Thread"}>
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
